@@ -31,15 +31,21 @@ const Nav = () => {
 
   return (
     <header
-      className={`bg-navbarBgColor bg-opacity-75 p-4 ${
+      className={`bg-navbarBgColor bg-opacity-75 p-2 ${
         isSticky ? "sticky top-0 z-50" : ""
       }`}
     >
       {/* Your navigation content */}
       <nav className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-normal text-xl base:text-base md:text-base lg:text-xl">
-          <Link href="/" className="text-white tracking-widest font-grotesque">
-            CHRIST TABERNACLE CHURCH
+        {/* Logo Image */}
+        <div className="flex items-center">
+          <img
+            src="/images/vpp flag.webp" // Path to your logo image
+            alt="Logo"
+            className="h-8 md:h-10 lg:h-12 mr-3" // Adjust size as necessary
+          />
+          <Link href="/" className="text-white tracking-widest font-Open sans text-xl base:text-base md:text-base lg:text-3xl">
+            VOICE OF THE PEOPLE PARTY
           </Link>
         </div>
 
@@ -76,61 +82,12 @@ const Nav = () => {
             }`}
           >
             <Link
-              href="/about"
+              href="/"
               className="text-white font-grotesque text-lg tracking-widest"
             >
-              Live
+              Home
             </Link>
-            <div className="relative inline-block text-left">
-              {/* The main link that toggles the dropdown */}
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-white font-grotesque text-lg tracking-widest flex items-center"
-              >
-                Prophecy & Sermons
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className={`w-5 h-5 ml-2 transition-transform duration-200 ${
-                    dropdownOpen ? "rotate-180" : "rotate-0"
-                  }`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-
-              {/* Dropdown menu */}
-              {dropdownOpen && (
-                <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                  <div
-                    className="py-1"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="options-menu"
-                  >
-                    <Link
-                      href="/prophecy-videos"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    >
-                      Prophecy Videos
-                    </Link>
-                    <Link
-                      href="/bible-sermons"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                    >
-                      Bible Sermons
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
+          
             <Link
               href="/about"
               className="text-white font-grotesque text-lg tracking-widest"
@@ -155,19 +112,79 @@ const Nav = () => {
             >
               Give
             </Link>
+            
             <Link
               href="/contact"
               className="text-white font-grotesque text-lg tracking-widest"
             >
               Contact
             </Link>
-            <Link
-              href="/roles"
+
+  <div className="relative inline-block text-left">
+              {/* The main link that toggles the dropdown */}
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-white font-grotesque text-lg tracking-widest flex items-center"
+              >
+                Discussion and Interaction
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className={`w-5 h-5 ml-2 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown menu */}
+              {dropdownOpen && (
+                <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                  <div
+                    className="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="options-menu"
+                  >
+                    <Link
+                      href="/prophecy-videos"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    >
+                      Tour Videos
+                    </Link>
+                    <Link
+                      href="/bible-sermons"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    >
+                      Public Outreach
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>          
+          </div>
+
+          <Link
+              href="/about"
               className="text-white font-grotesque text-lg tracking-widest"
             >
-              Roles
+              Live
             </Link>
-          </div>
+
+
+          {/* <Link
+              href="/roles"
+              className="text-white font-grotesque text-lg tracking-widest"       >
+              Roles
+            </Link> */}
+
           <Link
             href="/login"
             className="text-white font-grotesque text-lg tracking-widest border border-solid w-24 h-9 text-center"
@@ -175,6 +192,7 @@ const Nav = () => {
             LOGIN
           </Link>
         </div>
+
       </nav>
       {/* Mobile Sidebar */}
       {isMobileMenuOpen && (
@@ -200,63 +218,14 @@ const Nav = () => {
 
             {/* Mobile Menu Links */}
             <div className="flex flex-col space-y-4 mt-8 content-center mx-auto">
-              <Link
-                href="/about"
-                className="text-white self-center"
-                onClick={toggleMobileMenu}
-              >
-                Live
-              </Link>
-              <div className="relative inline-block mx-auto">
-                {/* The main link that toggles the dropdown */}
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-white font-grotesque text-lg tracking-widest flex items-center"
-                >
-                  Prophecy & Sermons
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className={`w-5 h-5 ml-2 transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
-                </button>
+          
+            <Link
+              href="/"
+              className="text-white self-center"
+            >
+              Home
+            </Link>
 
-                {/* Dropdown menu */}
-                {dropdownOpen && (
-                  <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                    <div
-                      className="py-1"
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="options-menu"
-                    >
-                      <Link
-                        href="/prophecy-videos"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      >
-                        Prophecy Videos
-                      </Link>
-                      <Link
-                        href="/bible-sermons"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      >
-                        Bible Sermons
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
               <Link
                 href="/about"
                 className="text-white self-center"
@@ -292,6 +261,66 @@ const Nav = () => {
               >
                 Contact
               </Link>
+
+              <div className="relative inline-block mx-auto">
+                {/* The main link that toggles the dropdown */}
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="text-white font-grotesque text-lg tracking-widest flex items-center"
+                >
+                   Discussion and Interaction
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className={`w-5 h-5 ml-2 transition-transform duration-200 ${
+                      dropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
+
+                {/* Dropdown menu */}
+                {dropdownOpen && (
+                  <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
+                      <Link
+                        href="/prophecy-videos"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      >
+                       Tour Videos
+                      </Link>
+                      <Link
+                        href="/bible-sermons"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      > Public Outreach
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              <Link
+                href="/about"
+                className="text-white self-center"
+                onClick={toggleMobileMenu}
+              >
+                Live
+              </Link>          
+              
+              
               <Link
                 href="/login"
                 className="text-white self-center text-center border border-solid p-2"

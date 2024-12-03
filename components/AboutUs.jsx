@@ -19,10 +19,8 @@ const AboutUs = () => {
                 Our Mission
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                At our organization, we strive to make the world a better place
-                through innovation, collaboration, and a strong commitment to our
-                core values. We believe in creating solutions that empower people
-                and foster growth in all areas of life.
+              “Our MISSION is to bring a real and complete change in the governance of the state with a strong,
+               clean and decisive leadership and also an all round and inclusive development.”
               </p>
             </div>
   
@@ -32,10 +30,12 @@ const AboutUs = () => {
                 Our Vision
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                We aim to be a global leader in our industry, inspiring change
-                and progress while maintaining integrity and dedication. Together
-                with our team, partners, and community, we work towards a future
-                that is sustainable, innovative, and inclusive for everyone.
+              “Change is possible and can take place only if we can get the
+               support and cooperation from all the people who are concerned about 
+               the well being of the state. It is therefore the duty and responsibility
+                of every right thinking person to support this effort to bring a real and
+                 complete change in our state. Therefore, no matter what comes in our way,
+                  our commitment to the cause will not be weakened.”
               </p>
             </div>
           </div>

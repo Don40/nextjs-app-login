@@ -1,36 +1,37 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-const Hero = ({bgImage, text, paragraph }) => {
-   const [bgHeight, setBgHeight] = useState('100vh');
+const Hero = ({ bgImage, text, paragraph }) => {
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) { // Change 768 to your desired breakpoint for mobile
-        setBgHeight('140vh');
-      } else {
-        setBgHeight('85vh');
-      }
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
     };
 
-    handleResize();
+    handleResize(); // Check on initial render
 
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div
-      className="relative w-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})`, height: bgHeight }}
+      className={`relative w-full bg-cover bg-center ${
+        isMobile ? "animate-moveBgMobile" : "animate-moveBgDesktop"
+      }`}
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        height: "100vh", // Adjust height if necessary
+        backgroundSize: "200%", // Allow enough space for animation
+      }}
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="absolute inset-0 flex flex-col justify-center items-center overflow-hidden p-4"> {/* Added overflow-hidden */}
-        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center font-raleway">{text}</h1>
-        <div className="max-w-6xl	 text-white text-base lg:text-lg md:text-2xl sm:text-xl xs:text-base text-center my-8 mx-1 md:mx-9 leading-9 tracking-wider font-extrabold font-montserrat overflow-auto max-h-40vh"> {/* Applied max height and overflow auto */}
-          <p>{paragraph}</p>
+      <div className="absolute inset-0 flex flex-col justify-center items-center overflow-hidden p-4">
+        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center font-raleway">
+          {text}
+        </h1>
+        <div className="max-w-6xl text-white text-base lg:text-lg md:text-2xl sm:text-xl xs:text-base text-center my-8 mx-1 md:mx-9 leading-9 tracking-wider font-extrabold font-montserrat overflow-auto max-h-40vh">
+          <p dangerouslySetInnerHTML={{ __html: paragraph }} />
         </div>
         <button
           type="button"
