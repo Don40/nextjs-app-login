@@ -26,7 +26,7 @@ const Hero = ({ bgImage, text, paragraph }) => {
       }}
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="absolute inset-0 flex flex-col justify-center items-center overflow-hidden p-4">
+      <div className="absolute inset-0 flex flex-col justify-center items-center overflow-hidden p-4 ">
         <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center font-raleway">
           {text}
         </h1>

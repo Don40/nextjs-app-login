@@ -31,7 +31,7 @@ const Nav = () => {
 
   return (
     <header
-      className={`bg-navbarBgColor bg-opacity-75 p-2 ${
+      className={`h-16 bg-navbarBgColor content-center bg-opacity-75 p-2 ${
         isSticky ? "sticky top-0 z-50" : ""
       }`}
     >
@@ -44,13 +44,18 @@ const Nav = () => {
             alt="Logo"
             className="h-8 md:h-10 lg:h-12 mr-3" // Adjust size as necessary
           />
-          <Link href="/" className="text-white tracking-widest font-Open sans text-xl base:text-base md:text-base lg:text-3xl">
-            VOICE OF THE PEOPLE PARTY
-          </Link>
+                  <Link
+  href="/"
+  className="text-white tracking-widest font-playfair text-base md:text-xl lg:text-[1.5rem] xl:text-2xl"
+>
+  VOICE OF THE PEOPLE PARTY
+</Link>
+
+
         </div>
 
         {/* Responsive Navigation Menu */}
-        <div className="md:hidden">
+        <div className="xl:hidden">
           {/* Mobile Menu Button */}
           <button
             className="text-white focus:outline-none"
@@ -72,12 +77,12 @@ const Nav = () => {
 
         {/* Navigation Links */}
         <div
-          className={`hidden gap-12  md:flex space-x-4 ${
+          className={`hidden gap-12  xl:flex space-x-4 ${
             isMobileMenuOpen ? "md:hidden" : ""
           }`}
         >
           <div
-            className={`hidden justify-between	 md:flex space-x-4 ${
+            className={`hidden justify-between	 xl:flex space-x-4 ${
               isMobileMenuOpen ? "md:hidden" : ""
             }`}
           >
@@ -126,7 +131,7 @@ const Nav = () => {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="text-white font-grotesque text-lg tracking-widest flex items-center"
               >
-                Discussion and Interaction
+                Discussion
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

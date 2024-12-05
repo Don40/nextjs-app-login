@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto text-center py-8">
         </div>
       <div className="container mx-auto text-center py-8 font-montserrat">
-        <p>&copy; 2024 THE VOICE OF THE PEOPLE PARTY. All rights reserved.</p>
+        <p>&copy; 2024 THE VOICE OF THE PEOPLE PARTY. <br/>All rights reserved.</p>
       </div>
     </footer>
   );

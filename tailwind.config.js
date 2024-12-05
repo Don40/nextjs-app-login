@@ -34,6 +34,7 @@ module.exports = {
         raleway: ["var(--font-raleway)"],
         montserrat: ["var(--font-montserrat)"],
         grotesque: ["var(--font-darker-grotesque)"],
+        playfair:["var(--font-playfair-display)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -1,4 +1,4 @@
-import { Raleway, Montserrat, Darker_Grotesque } from 'next/font/google'
+import { Raleway, Montserrat, Darker_Grotesque, Playfair_Display } from 'next/font/google'
 
 const raleway_init = Raleway({
     subsets: ['latin'],
@@ -19,6 +19,13 @@ const darkerGrotesque_init = Darker_Grotesque({
     variable: '--font-darker-grotesque',
 });
 
+const playfairDisplay_init = Playfair_Display({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700', '800', '900'],
+    variable: '--font-playfair-display',
+});
+
 export const raleway = raleway_init.variable;
 export const montserrat = montserrat_init.variable;
 export const grotesque = darkerGrotesque_init.variable;
+export const playfair = playfairDisplay_init.variable;

@@ -35,12 +35,12 @@ const Home = () => {
     <SecondaryHero
                 bgImage="/images/bg-image.webp"
                 text="MESSAGE FROM THE VOICE OF THE PEOPLE PARTY!"
-                paragraph="Our aim is to bring a real and complete change in the governance of the state with a strong, clean 
+                paragraph={`Our aim is to bring a real and complete change in the governance of the state with a strong, clean 
     and decisive leadership and also an all round and inclusive development. <br>
     Change is possible and can take place only if we can get the support and cooperation from 
     all the people who are concerned about the well being of the state. It is therefore the duty and responsibility of
     every right thinking person to support this effort to bring a real and complete change in our state. 
-    Therefore, no matter what comes in our way, our commitment to the cause will not be weakened."
+    Therefore, no matter what comes in our way, our commitment to the cause will not be weakened.`}
             />
            
       {/* <Hero
